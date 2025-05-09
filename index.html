@@ -5,41 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Graph Generation</title>
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
 </head>
 <body>
     
     <div class="container">
         <div class="top-section">
-            <div></div>
             <div class="inputs-container">
-                <!-- <div class="input-container">
-                    <h3>size</h3>
-                    <input class="input-box" id="size-input" type="number"/>
-                </div> -->
-                <div class="input-container">
-                    <h3>x-axis</h3>
-                    <input class="input-box" id="x-axis-input" type="number"/>
+
+                <div class="input-group">
+                    <div class="input-container">
+                        <p>max-X:</p>
+                        <input class="input-box" id="max-X-input" type="number" min="1"/>
+                    </div>
+                    <div class="input-container">
+                        <p>max-Y:</p>
+                        <input class="input-box" id="max-Y-input" type="number" min="1"/>
+                    </div>
+                <!-- </div> -->
+
+                <!-- <div class="input-group"> -->
+                    <div class="input-container">
+                        <p>x-axis:</p>
+                        <input class="input-box" id="x-axis-input" type="number"/>
+                    </div>
+                    <div class="input-container">
+                        <p>y-axis:</p>
+                        <input class="input-box" id="y-axis-input" type="number"/>
+                    </div>
                 </div>
-                <div class="input-container">
-                    <h3>y-axis</h3>
-                    <input class="input-box" id="y-axis-input" type="number"/>
+
+                <div class="input-group">
+                    <button class="btn action-btn" id="draw-mark-clear-btn">Draw</button>
+                    <!-- <button class="btn" id="reset-btn">Reset</button> -->
                 </div>
-                <!-- <div class="input-container">
-                    <h3>%</h3>
-                    <input class="input-box" id="percentage-input" type="number"/>
-                </div> -->
-                <div class="input-container">
-                    <button class="generate-graph-btn">generate graph</button>
-                </div>
+               
             </div>
         </div>
         <div class="bottom-section">
-            <div class="grid-container">
+            <diV>
+                <button class="btn" id="reset-btn">
+                    <i class="bi bi-arrow-clockwise"></i>
+                    <!-- <span>Reset</span> -->
+                </button>
+            </diV>
+            <div class="grid-scrollable-container">
+                <div class="grid-container">
+                </div>
             </div>
         </div>
     </div>
-
-
 
     <script src="script.js"></script>
 </body>
