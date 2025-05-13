@@ -61,9 +61,6 @@ function draw(xAxis, yAxis, gridContainer) {
         }
     }
 
-    drawState = false;
-    markState = true;
-
     actionBtn.textContent = "Mark";
     actionBtn.classList.add("clicked");
     maxXSize.disabled = true;
@@ -71,6 +68,10 @@ function draw(xAxis, yAxis, gridContainer) {
 
     xInput.disabled = false;
     YInput.disabled = false;
+
+    // changing states
+    drawState = false;
+    markState = true;
 }
 
 // ---------------mark funciton----------------------------
@@ -88,7 +89,7 @@ function mark(xToPlot, yToPlot, xAxis, yAxis) {
 
 
     // validation of correct x and y points
-    if((x >= xAxis) || (y >= yAxis)) {
+    if((x >= xAxis) || (y >= yAxis) || (x < 0) || (y < 0)) {
         alert("x or y point does not includes in the grid generated");
         return;
     }
@@ -99,6 +100,8 @@ function mark(xToPlot, yToPlot, xAxis, yAxis) {
 
         blockToColor.style.backgroundColor = "blueviolet";
         actionBtn.textContent = "Clear";
+
+        // changing states
         markState = false;
         clearState = true;
     }
@@ -113,8 +116,9 @@ function clear(x, y) {
     xInput.value = '';
     YInput.value = '';
 
-    markState = true;
+    // changing states
     clearState = false;
+    markState = true;
 }
 
 
@@ -128,7 +132,9 @@ function clearDrawState() {
     maxYSize.disabled = false;
     maxXSize.value = "";
     maxYSize.value = "";
-    
+
+    xInput.value = "";
+    YInput.value = "";
     xInput.disabled = true;
     YInput.disabled = true;
 
